@@ -1,1 +1,35 @@
+import java.util.ArrayList; // Im not sure what else to do.....
+public class Library {
+    private ArrayList<Books> books;
+    private ArrayList<User> users;
 
+    public Library() {
+        books = new ArrayList<>();
+        users = new ArrayList<>();
+    }
+
+    public void addBook(String title, int bookID) {
+        Books newBook = new Books(title, bookID);
+        books.add(newBook); 
+    }
+
+    public void addUser(String name) throws DuplicateUserException{
+        for (User user : users) {//Need to add this for DuplicateUserException to work
+			if (user.getName().equals(name)) {
+				throw new DuplicateUserException("User already exists");
+			}
+		}
+        User newUser = new User(null, name);
+        users.add(newUser); 
+        System.out.println("Welcome new user: " + name);
+    }
+
+    public ArrayList<Books> getBooks() {
+        return books;
+    }
+
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
+}
