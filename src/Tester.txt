@@ -1,1 +1,75 @@
+public class Tester {
 
+    public static void main(String[] args) {
+        // Creating Library
+        Library lib = new Library();
+
+        // Creating Books
+        Books b1 = new Books("The Sword in The Stone", 0001);
+        Books b2 = new Books("Meat and Cheese", 0002);
+        Books b3 = new Books("Harry Potter", 0003);
+        Books b4 = new Books("The Dark Room", 0004);
+        Books b5 = new Books("Smell you later", 0005);
+        Books b6 = new Books("Fool's Gold", 0006);
+        Books b7 = new Books("She got that peach", 0007);
+     
+      
+      
+      try {
+        // Adding Books to Inventory
+        lib.addBook(b1);
+        lib.addBook(b2);
+        lib.addBook(b3);
+        lib.addBook(b4);
+        lib.addBook(b5);
+        lib.addBook(b6);
+        lib.addBook(b7);
+      } catch (DuplicateUserException e) {
+        System.out.println("Duplicate book added! No space on the shelf!");
+      }
+      
+
+
+
+      
+        // Creating Users
+        User u1 = new User("Johnny Cash", 32,"male");
+        User u2 = new User("Abu Dhabi", 23, "male");
+        User u3 = new User("Isaiah Newton", 44, "male");
+        User u4 = new User("Peter Bilt", 57, "male");
+        User u5 = new User("Sasha Valakov", 21, "female");
+        User u6 = new User("David Harry", 22, "male");
+        User u7 = new User("Johnny Cash", 23, "male");
+
+
+
+      
+      try {
+        // Registering Users
+        lib.addUser(u1);
+        lib.addUser(u2);
+        lib.addUser(u3);
+        lib.addUser(u4);
+        lib.addUser(u5);
+        lib.addUser(u6);
+        lib.addUser(u7);
+      } catch (InvalidUserIDException e) {
+        System.out.println("Duplicate user added! Cannot issue a library card!");
+      }
+
+      
+
+
+        // Checking out books
+        lib.checkOut(u1,b1);
+
+        // Checking availability of book just checked out
+        u1.hasBook(b1);
+
+
+
+
+
+
+    }
+}
