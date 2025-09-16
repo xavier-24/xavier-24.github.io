@@ -1,1 +1,13 @@
+public class DuplicateUserException extends Exception{
+    public DuplicateUserException(){
+        super("Error!!! User already exists");
+    }
+    public DuplicateUserException(String messeage){
+        super(message);
+    }
 
+
+    /*
+     * if (input.nextLine.equals(name.user))
+     */
+}
