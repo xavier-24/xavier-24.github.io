@@ -1,1 +1,47 @@
+public class User {
+    private Books books;
+    private boolean hasBook;
+    private String name;
 
+    public User(Books books, String name) {
+        this.books = books;
+        this.name = name;
+    }
+
+    public Books getBook() {
+        return books;
+    }
+
+    public void setBook(Books books) {
+        this.books = books;
+    }
+
+    public boolean isHasBook() {
+        return hasBook;
+    }
+
+    public void setHasBook(boolean hasBook) {
+        this.hasBook = hasBook;
+    }
+
+    public void setHasBook() {
+        if (!hasBook()) {
+            hasBook = true;
+            System.out.println(books + " has been checked out.");
+        } else {
+            System.out.println(books + " is already checked out.");
+        }
+    }
+
+    private boolean hasBook() {
+        return hasBook;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName(){
+        return name;
+    }
+}
