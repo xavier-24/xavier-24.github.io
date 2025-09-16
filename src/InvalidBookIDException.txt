@@ -1,1 +1,25 @@
+public class InvalidBookIDException extends Exception{
+    public InvalidBookIDException(){
+        super("This Book ID does not exist in our system");
+    }
+    public InvalidBookIDException(String message){
+        super(message);
+    }
+}
 
+
+    /*public ______ ()throws InvalidBookIDException{
+    int bookID;
+    int count = String.valueOf(Math.abs(bookID)).length();
+    if (count < 6 || count > 6){
+    throw new InvalidBookIDException();
+    }
+     *
+     *
+     *
+     *
+     */
+//public String toString(int bookID){
+//}
+//String idLength = String.valueOf(bookID);
+//if(bookID )
