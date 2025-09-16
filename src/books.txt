@@ -1,0 +1,48 @@
+public class Books {
+    private String title;
+    private int bookID;
+    private boolean availabilityStatus;
+
+
+    public Books(String title, int bookID) {
+        this.title = title;
+        this.bookID = bookID;
+        this.availabilityStatus = false;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getBookID() {
+        return bookID;
+    }
+
+    public void setBookID(int bookID) {
+        this.bookID = bookID;
+    }
+
+    public Object setAvailabilityStatus() {
+        if (!availabilityStatus()){
+            availabilityStatus = true;
+            System.out.println(title + " has been checked out.");
+    }else{
+            availabilityStatus = false;
+            System.out.println(title + " is already checked out.");
+        }
+        return "";
+    }
+
+    private boolean availabilityStatus() {
+        return availabilityStatus;
+    }
+
+
+    public String toString(){
+        return String.format("%s\n%d\n%s", title, bookID, setAvailabilityStatus());
+    }
+}
