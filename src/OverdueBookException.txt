@@ -1,1 +1,13 @@
+public class OverdueBookException  extends Exception{
 
+    public OverdueBookException(){
+        super();
+
+    }
+
+    public OverdueBookException(String message){
+        super(message);
+    }
+}
+
+////
